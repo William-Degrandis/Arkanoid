@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CollectablesManager : MonoBehaviour
+{
+    #region Instance
+
+    public static CollectablesManager _instance;
+
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    #endregion
+
+    public List<Collectable> AvailableBuffs;
+    public List<Collectable> AvailableDebuffs;
+
+    [Range(0, 100)]
+    public float BuffChance;
+
+    [Range(0, 100)]
+    public float DefuffChance;
+}
