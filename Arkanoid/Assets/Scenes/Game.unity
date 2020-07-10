@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86d710af2e0dc64093d5dda720a0e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 2.55
+  maxDistance: 1.47
   moveSpeed: 5
-  expandPaddleDuration: 10
+  expandPaddleDuration: 5
   paddleWidth: 2
   paddleHeight: 0.3
 --- !u!1 &466878652
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 1620563498}
   victoryScreen: {fileID: 2082162667}
-  InitialLives: 3
+  InitialLives: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99e93526dec60e40b11d737fca43d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevel: 1
+  CurrentLevel: 0
   brickPrefabs: {fileID: 699355434975293888, guid: a0c03332ce7b2a84d988d99b3bde98f4,
     type: 3}
   Sprites:
@@ -1620,8 +1620,8 @@ MonoBehaviour:
   - {fileID: 1132454284645503827, guid: fd2646d4b3bd47047814ad228fdb35be, type: 3}
   AvailableDebuffs:
   - {fileID: 7805760918979744170, guid: e1639454d892fe646a1794af11b67ff3, type: 3}
-  BuffChance: 5
-  DefuffChance: 10
+  BuffChance: 10
+  DefuffChance: 5
 --- !u!1 &2008686566
 GameObject:
   m_ObjectHideFlags: 0

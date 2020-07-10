@@ -32,7 +32,7 @@ public class PaddleController : MonoBehaviour
     private SpriteRenderer sr;
     private BoxCollider2D boxCol;
 
-    public float maxDistance = 5;
+    public float maxDistance = 5f;
     public float moveSpeed = 5;
     public float expandPaddleDuration = 10;
     public float paddleWidth = 2;
@@ -76,6 +76,7 @@ public class PaddleController : MonoBehaviour
         else
         {
             float currentWidth = this.sr.size.x;
+
             while(currentWidth > width)
             {
                 currentWidth -= Time.deltaTime * 2;
@@ -97,15 +98,19 @@ public class PaddleController : MonoBehaviour
     private void PaddleMove()
     {
         float move = Input.GetAxis("Mouse X");
-        if(move > 0)
+
+        if (move > 0)
         {
             if (transform.position.x > maxDistance)
                 move = 0;
         }
-        if(move < 0)
+        else
         {
-            if (transform.position.x < -maxDistance)
-                move = 0;
+            if (move < 0)
+            {
+                if (transform.position.x < -maxDistance)
+                    move = 0;
+            }
         }
 
         transform.Translate(Vector3.right * move * Time.deltaTime * moveSpeed);
@@ -143,6 +148,7 @@ public class PaddleController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position - Vector3.right * maxDistance, transform.position + Vector3.right * maxDistance);
     }
 }
